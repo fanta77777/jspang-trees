@@ -6,28 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="../assets/js/vue.js"></script>
+    <script src="../assets/js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-    <h1>Vue.directive</h1>
+    <h1>hello world</h1>
 
-    <hr>
-
-    <div id="app"></div>
-
-
+    <div id="app">
+        {{message}}
+    </div>
 
 <script type="text/javascript">
-    var app=Vue.extend({
-        template:'<p><a :href="URL">{{name}}</a></p>',
-        data:function(){
-            return {
-                name:'haha',
-                URL:'http://www.baidu.com'
+
+
+    var app=new Vue({
+        el:'#app',
+        data:{
+            message:'hello world'
+        },
+        mounted:function(){
+            $('#app').html('我是jquery!')
+        },
+        methods:{
+            add:function(){
+                console.log('调用了构造器内部的ADD方法！')
             }
         }
- 
     })
-    new app().$mount('#app');
+
+    app.add();
 
 </script>
 </body>

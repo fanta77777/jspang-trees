@@ -21,7 +21,7 @@
 <script type="text/javascript">
     var addConsole={
         updated:function(){
-            console.log('数据发生变化,变成了'+this.num)
+            console.log('数据发生变化,变成了'+this.num+' 我是扩展的updated')
         }
     }
 
@@ -38,7 +38,8 @@
         },
         methods:{
             add:function(){
-                this.num++
+                console.log('我是原生的方法');
+                this.num++;
             }
         },
         updated:function(){
