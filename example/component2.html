@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>component-1</h1>
+
+    <div id="app">
+        <panda v-bind:here="message"></panda>
+        
+    </div>
+
+    
+
+
+<script type="text/javascript">
+ 
+    var app=new Vue({
+        el:'#app',
+        data:{
+            message:'China'
+        },
+        components:{
+            "panda":{
+               template:`<div style="color:red">panda from {{ here }}</div>`,
+               props:['here'] 
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
